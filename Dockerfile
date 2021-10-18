@@ -1,7 +1,6 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2
-WORKDIR /app
-COPY myapp_code .
-RUN dotnet build -c Release -o /rel
+FROM mcr.microsoft.com/dotnet/core/sdk:latest
+WORKDIR C:\Users\foofi\.dotnet
+RUN dotnet build dockerfile.js -c Release -o /rel
 EXPOSE 80
-WORKDIR /rel
+WORKDIR C:\Users\foofi\.dotnet
 ENTRYPOINT ["dotnet", "myapp.dll"]
